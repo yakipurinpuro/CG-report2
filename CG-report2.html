@@ -94,7 +94,6 @@
         var sphere = new THREE.Mesh( spheregeometry, spherematerial );
         sphere.positon.set(0,0,-2)
         scene.add( sphere );
-        update();
 
         tick();
         // 毎フレーム時に実行されるループイベントです
@@ -102,7 +101,6 @@
           // レンダリング
           renderer.render(scene, camera);
           requestAnimationFrame(tick);
-          requestAnimationFrame(update);
         }
       }
     </script>

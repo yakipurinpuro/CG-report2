@@ -84,12 +84,25 @@
         sprite2.scale.set(100,100,100);
         scene.add(sprite2);
 
+        //　地球を作成
+        var texture3 = textureLoader.load("img/earth.png");
+        var mat = new THREE.MeshPhongMaterial();
+        mat.map = texture3;
+
+        var spheregeometry = new THREE.SphereGeometry( 0.5, 32, 32 );
+        var spherematerial = new THREE.MeshBasicMaterial( {color: 0xFFFF00} );
+        var sphere = new THREE.Mesh( spheregeometry, spherematerial );
+        sphere.positon.set(0,0,-2)
+        scene.add( sphere );
+        update();
+
         tick();
         // 毎フレーム時に実行されるループイベントです
         function tick() {
           // レンダリング
           renderer.render(scene, camera);
           requestAnimationFrame(tick);
+          requestAnimationFrame(update);
         }
       }
     </script>

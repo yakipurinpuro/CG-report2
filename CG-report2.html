@@ -81,22 +81,6 @@
         sprite3.scale.set(0.5,0.5,0.5);
         scene.add(sprite3);
 
-        //星３をセット
-        const sprite4 = new THREE.Sprite(material2);
-        sprite4.position.x = 0;
-        sprite4.position.y = 1;
-        sprite4.position.z = 1;
-        sprite4.scale.set(0.5,0.5,0.5);
-        scene.add(sprite4);
-
-        //星４をセット
-        const sprite5 = new THREE.Sprite(material2);
-        sprite5.position.x = 0;
-        sprite5.position.y = 1;
-        sprite5.position.x = -1;
-        sprite5.scale.set(0.5,0.5,0.5);
-        scane.add(sprite5);
-
         //テクスチャ読み込み
         var texture_stone = textureLoader.load("stone.jpg");
         var mat = new THREE.MeshPhongMaterial();

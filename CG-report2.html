@@ -55,7 +55,7 @@
         // モナリザをスプライトで作成
         var textureLoader = new THREE.TextureLoader();  
         var texture = textureLoader.load("img/Mona_Lisa2.png");
-        const material = new THREE.SpriteMaterial({ map: texture,});
+        const material = new THREE.SpriteMaterial({ map: texture,transparent: true});
 
         // モナリザセット
         const sprite1 = new THREE.Sprite(material);

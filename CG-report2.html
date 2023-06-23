@@ -105,6 +105,12 @@
           sphere1.rotation.x +=0.01;
           sphere1.rotation.y += 0.01;
 
+           rot += 0.3; // 毎フレーム角度を0.3度ずつ足していく
+           const radian = (rot * Math.PI) / 180;
+           // xz平面にて半径1の円を描くように動作。
+           camera.position.x = Math.sin(radian);
+           camera.position.z = Math.cos(radian);
+           camera.lookAt(new THREE.Vector3(0, 0, 0));//原点を見つめる
         }
       }
     </script>

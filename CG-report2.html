@@ -82,17 +82,33 @@
         scene.add(sprite3);
 
         //テクスチャ読み込み
-        var texture_stone = textureLoader.load("stone.jpg");
-        var mat = new THREE.MeshPhongMaterial();
-        mat.map = texture_stone;
+        var texture_sun = textureLoader.load("sunmapthumb.jpg");
+        var mat1 = new THREE.MeshPhongMaterial();
+        mat1.map = texture_sun;
+
+        var texture_neptune = textureLoader.load("neptunemapthumb.jpg");
+        var mat2 = new THREE.MeshPhongMaterial();
+        mat2.map = texture_neptune;
+
+        var texture_mars = textureLoader.load("mars_thumbnail.jpg");
+        var mat3 = new THREE.MeshPhongMaterial();
+        mat3.map = texture_mars;
 
         
         //球を作成
         var Geometry = new THREE.SphereGeometry(0.3,32,32);
-        var sphere1 = new THREE.Mesh(Geometry,mat);
+        var sphere1 = new THREE.Mesh(Geometry,mat1);
         sphere1.position.set(1,2,0);
         scene.add(sphere1);
 
+        var sphere2 = new THREE.Mesh(Geometry,mat2);
+        sphere2.position.set(-1,2,0);
+        scene.add(sphere2);
+
+        var sphere3 = new THREE.Mesh(Geometry,mat3);
+        sphere3.position.set(0,2,1);
+        scene.add(sphere3);
+        
         update();
 
         // 毎フレーム時に実行されるループイベントです
@@ -102,8 +118,14 @@
           requestAnimationFrame(update);
 
           //球を回転させる
-          sphere1.rotation.x +=0.01;
+          sphere1.rotation.x += 0.01;
           sphere1.rotation.y += 0.01;
+
+          sphere2.rotation.x += 0.01;
+          sphere2.rotation.y += 0.01;
+
+          sphere3.rotation.x += 0.01;
+          sphere3.rotation.y += 0.01;
 
         }
       }

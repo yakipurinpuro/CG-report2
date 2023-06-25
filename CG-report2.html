@@ -17,7 +17,9 @@
         const height = 700;
 
         // レンダラーを作成
-        var renderer = new THREE.WebGLRenderer();
+        var renderer = new THREE.WebGLRenderer({
+          alpha: true,
+        });
         document.body.appendChild(renderer.domElement);
         renderer.setSize(width, height);
         // 背景の色を設定
@@ -82,14 +84,17 @@
         scene.add(sprite3);
 
         //テクスチャ読み込み
+        //太陽
         var texture_sun = textureLoader.load("sunmapthumb.jpg");
         var mat1 = new THREE.MeshPhongMaterial();
         mat1.map = texture_sun;
 
+        //海王星
         var texture_neptune = textureLoader.load("neptunemapthumb.jpg");
         var mat2 = new THREE.MeshPhongMaterial();
         mat2.map = texture_neptune;
 
+        //火星
         var texture_mars = textureLoader.load("mars_thumbnail.jpg");
         var mat3 = new THREE.MeshPhongMaterial();
         mat3.map = texture_mars;
